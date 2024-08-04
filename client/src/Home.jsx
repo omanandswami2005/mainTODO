@@ -13,7 +13,7 @@ const Home = () => {
         <h1 className="text-3xl font-extrabold mb-6 text-gray-800 text-center">Welcome to the Todo App</h1>
         <p className="text-gray-600 mb-4 text-center">Stay organized and keep track of your tasks easily.</p>
         <div className="flex justify-center mb-6">
-          <img src="https://via.placeholder.com/150" alt="Placeholder" className="w-32 h-32 rounded-full shadow-md" />
+          <img src="https://avatars.githubusercontent.com/u/101080173?v=4" alt="Placeholder" className="w-32 h-32 rounded-full shadow-md" />
         </div>
         <div className="text-center">
           <Link to="/create-todo" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
