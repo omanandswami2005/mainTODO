@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
-
+require('dotenv').config();
 
 const connectDB = async () => {
     try {
-      const connectionInstance = await mongoose.connect(
-        `mongodb://localhost:27017/todo?retryWrites=true&w=majority`
+      const connectionInstance = await mongoose.connect(process.env.MONGO_URI,
       );
       console.log(
         'MongoDB connected...with host:',
