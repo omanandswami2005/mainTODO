@@ -6,9 +6,13 @@ const CreateTodo = () => {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
 
+  const axiosInstance = axios.create({
+    baseURL: 'https://todobackend-hk6n.onrender.com',
+  });
+
   useEffect(() => {
     const fetchTodos = async () => {
-      const res = await axios.get('/api/todos');
+      const res = await axiosInstance.get('/api/todos');
       setTodos(res.data);
     };
     fetchTodos();
@@ -16,7 +20,7 @@ const CreateTodo = () => {
 
   const addTodo = async () => {
     if (input.trim()) {
-      const res = await axios.post('/api/todos', { text: input });
+      const res = await axiosInstance.post('/api/todos', { text: input });
       setTodos([...todos, res.data]);
       setInput('');
       const inp = document.querySelector('input');
@@ -26,7 +30,7 @@ const CreateTodo = () => {
   };
 
   const deleteTodo = async (id) => {
-    await axios.delete(`/api/todos/${id}`);
+    await axiosInstance.delete(`/api/todos/${id}`);
     setTodos(todos.filter(todo => todo._id !== id));
   };
 
